@@ -27,7 +27,7 @@ public class StudentController {
     public String getStudent(Model model){
         model.addAttribute("student",studentService.getStudentList());
         System.out.println("student-get");
-        return "viewStudent";
+        return "index";
     }
     @GetMapping("/form")
     public String fillDetailsInForm(Model model){
