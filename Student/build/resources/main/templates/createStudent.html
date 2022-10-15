@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Student</title>
+
+  <style>
+    body {
+      font-family: Garamond, serif;
+    }
+  </style>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+
+</head>
+<body>
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+  <!-- Brand -->
+  <a class="navbar-brand" href="#">Student Management System</a>
+
+  <!-- Toggler/collapsibe Button -->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <!-- Navbar links -->
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" th:href="@{/student}">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">About</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<br>
+<br>
+
+
+  <div class="container">
+    <h1 style="text-align:center">Create a new student !!</h1>
+    <br><br>
+  <form class="form-group" th:action="@{/student}" th:object="${student}" method="POST">
+
+    <div class="form-group">
+      <label for="firstName">First Name</label>
+      <input type="text" class="form-control" id="firstName" required placeholder="Enter First Name"
+             th:field="*{firstName}">
+    </div>
+
+    <div class="form-group">
+      <label for="lastName">Last Name</label>
+      <input type="text" class="form-control" id="lastName" required th:field="*{lastName}"
+             placeholder="Enter Last Name">
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email address</label>
+      <input type="email" class="form-control" id="email" required placeholder="Enter email"
+             th:field="*{email}">
+    </div>
+
+    <div class = "box-footer">
+      <button type="submit" class = "btn btn-primary">
+        Submit
+      </button>
+    </div>
+
+  </form>
+  </div>
+<footer class="text-center text-white fixed-bottom" style="background-color: #21081a;">
+  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+    <b th:text="${#dates.format(#dates.createNow(),'YYYY')}"></b>
+    <b>©Copyright: Siddhant Chourasia</b>
+  </div>
+</footer>
+</body>
+</html>
