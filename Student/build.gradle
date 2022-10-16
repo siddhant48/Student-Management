@@ -21,6 +21,7 @@ dependencies {
     developmentOnly 'org.springframework.boot:spring-boot-devtools'
     runtimeOnly 'mysql:mysql-connector-java'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    implementation 'org.postgresql:postgresql:42.1.4'
 }
 
 tasks.named('test') {
