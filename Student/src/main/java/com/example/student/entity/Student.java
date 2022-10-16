@@ -1,7 +1,4 @@
 package com.example.student.entity;
-
-import com.sun.javafx.geom.transform.Identity;
-
 import javax.annotation.Generated;
 import javax.persistence.*;
 
